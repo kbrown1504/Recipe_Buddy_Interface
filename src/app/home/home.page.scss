@@ -25,3 +25,47 @@
 #container a {
   text-decoration: none;
 }
+
+.content {
+  margin-top:4em;
+}
+
+.container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.welcome-text {
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.buttons {
+  display: inline-block;
+}
+
+.round-button {
+  width: 80px;
+  height: 60px;
+}
+.icon {
+  width: 4em;
+  height: 4em;
+}
+
+.page-content {
+  max-width: 36em;
+  align-self: center;
+  align-items: center;
+}
+
+.submit {
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+.list-img {
+  width: 20px;
+  height: 20px;
+}
