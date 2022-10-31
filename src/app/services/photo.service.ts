@@ -22,4 +22,13 @@ export class PhotoService {
     });
     this.photo = capturedPhoto;
   }
+
+  public async getImageFromGallery() {
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Photos,
+      quality: 100
+    });
+    this.photo = capturedPhoto;
+  }
 }

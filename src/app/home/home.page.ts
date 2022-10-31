@@ -10,6 +10,10 @@ export class HomePage {
 
   constructor(private photoService: PhotoService) {}
 
+  getPhoto() {
+    console.log('GALLERY');
+    this.photoService.getImageFromGallery();
+  }
   takeNewPhoto() {
     console.log('PHOTO');
     this.photoService.takePhoto();
