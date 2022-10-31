@@ -22,23 +22,22 @@
         </ion-button>
       </div>
       <div class="submit">
-        <ion-button>
+        <ion-button (click)="getRecipes()">
           Find Recipes
           <ion-icon name="search" style="padding-left:10px;"></ion-icon>
         </ion-button>
       </div>
       <div class="recipe-list">
-        <ion-list>
+        <ion-list *ngFor="let recipe of recipeList; let i = index;">
           <ion-item>
             <ion-row>
-
             </ion-row>
             <ion-thumbnail style="padding-right:10px;">
               <img
-              src="https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Country-Roasted-Chicken_EXPS_FT20_17623_F_0130_1.jpg"
+              src={{recipe.url}}
               >
             </ion-thumbnail>
-            <ion-label>Roasted Chicken</ion-label>
+            <ion-label>{{recipe.name}}</ion-label>
           </ion-item>
         </ion-list>
       </div>
