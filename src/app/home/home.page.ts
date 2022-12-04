@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PhotoService } from '../services/photo.service';
+import { recipeService } from '../services/recipe.service';
 import { NavController } from '@ionic/angular';
 import { Recipe } from 'src/models/recipe';
 
@@ -11,7 +12,10 @@ import { Recipe } from 'src/models/recipe';
 export class HomePage {
   public recipeList: Recipe[] = [];
 
-  constructor(private photoService: PhotoService) {}
+  constructor(private photoService: PhotoService, private recipeService: recipeService) {}
+  sendRecipe(recipe: Recipe) {
+    this.recipeService.setRecipe(recipe);
+  }
 
   takeNewPhoto() {
     console.log('PHOTO');
@@ -64,4 +68,6 @@ export class HomePage {
     ]
   });
   }
+
+  
 }

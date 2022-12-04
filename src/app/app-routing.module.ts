@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'recipePage',
+    loadChildren: () => import('./recipe-page/recipe-page.module').then(m => m.RecipePageModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
