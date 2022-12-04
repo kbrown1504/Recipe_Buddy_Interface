@@ -8,10 +8,23 @@
     <div class="content">
         <div id="containter">
             <div class="welcome-text">
-                <h1>Recipe for (recipe name here)</h1>
+                <h1>Recipe for {{recipe.name}}</h1>
             </div>
             <div class="recipe">
-                                
+                <img src={{recipe.url}}>
+                Ingredients: 
+                <ion-list *ngFor="let ingredient of recipe.ingredients; let i = index;">
+                    <ion-row>
+                    </ion-row>
+                    {{i + 1}}. {{ingredient}}
+                </ion-list>
+                <br>
+                Steps:
+                <ion-list *ngFor="let step of recipe.steps; let i = index;">
+                    <ion-row>
+                    </ion-row>
+                    {{i + 1}}. {{step}}
+                </ion-list>
             </div>
         </div>
     </div>

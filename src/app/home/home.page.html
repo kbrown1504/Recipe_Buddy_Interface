@@ -29,7 +29,7 @@
       </div>
       <div class="recipe-list">
         <ion-list *ngFor="let recipe of recipeList; let i = index;">
-          <ion-item>
+          <ion-item button (click)="sendRecipe(recipe)">
             <ion-row>
             </ion-row>
             <ion-thumbnail style="padding-right:10px;">

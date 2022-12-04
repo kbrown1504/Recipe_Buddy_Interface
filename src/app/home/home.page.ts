@@ -11,10 +11,16 @@ import { Recipe } from 'src/models/recipe';
 })
 export class HomePage {
   public recipeList: Recipe[] = [];
-
-  constructor(private photoService: PhotoService, private recipeService: recipeService) {}
+  
+  constructor(private photoService: PhotoService, 
+    private recipeService: recipeService,
+    private navContoller: NavController
+    ) {}
   sendRecipe(recipe: Recipe) {
     this.recipeService.setRecipe(recipe);
+    console.log("added recipe")
+    //navigate to next page somehow
+    this.navContoller.navigateForward("recipePage")
   }
 
   takeNewPhoto() {
@@ -26,7 +32,7 @@ export class HomePage {
     this.recipeList.push({name: "Spaghetti", 
     url: "https://lilluna.com/wp-content/uploads/2018/05/easy-spaghetti-resize-2.jpg", 
     ingredients: ["Spaghetti noodles", "Pasta Sauce"],
-    Steps: [
+    steps: [
       "Boil a pot of water",
       "Put your Spaghetti noodles into the boiling water",
       "Wait around 15 minutes",
@@ -40,7 +46,7 @@ export class HomePage {
     name: "Bacon and Eggs",
     url: "https://i.imgur.com/fg9iEmZ.jpg",
     ingredients: ["Bacon", "Eggs", "Seasonings as desired"],
-    Steps: [
+    steps: [
       "Using a large skillet, place slices of bacon in the pan over medium-high heat.",
       "Cook your bacon, turning it every couple minutes unitl it reaches the crispiness you desire.",
       "Drain the bacon on a plate layered with paper towels.",
@@ -59,7 +65,7 @@ export class HomePage {
     name: "Peanut Butter and Jelly Sandwich",
     url: "https://storcpdkenticomedia.blob.core.windows.net/media/recipemanagementsystem/media/recipe-media-files/recipes/retail/x17/2018_grilled-peanut-butter-and-jelly_20336_760x580.jpg?ext=.jpg",
     ingredients: ["Peanut Butter", "Jelly", "Sliced Bread"],
-    Steps: [
+    steps: [
       "Take out two pieces of sliced bread",
       "Spread jelly on one slice of bread",
       "Spread peanut butter on the other slice of bread",
