@@ -1,9 +1,4 @@
 <ion-content class="page-content">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
   <div class="content">
     <div id="container">
@@ -27,19 +22,21 @@
           <ion-icon name="search" style="padding-left:10px;"></ion-icon>
         </ion-button>
       </div>
-      <div class="recipe-list">
-        <ion-list *ngFor="let recipe of recipeList; let i = index;">
-          <ion-item button (click)="sendRecipe(recipe)">
-            <ion-row>
-            </ion-row>
-            <ion-thumbnail style="padding-right:10px;">
-              <img
-              src={{recipe.url}}
-              >
-            </ion-thumbnail>
-            <ion-label>{{recipe.name}}</ion-label>
-          </ion-item>
-        </ion-list>
+      <div class="list-continer">
+        <div class="recipe-list">
+          <ion-list *ngFor="let recipe of recipeList; let i = index;">
+            <ion-item button (click)="sendRecipe(recipe)">
+              <ion-row>
+              </ion-row>
+              <ion-thumbnail style="padding-right:10px;">
+                <img
+                src={{recipe.url}}
+                >
+              </ion-thumbnail>
+              <ion-label>{{recipe.name}}</ion-label>
+            </ion-item>
+          </ion-list>
+        </div>
       </div>
     </div>
   </div>

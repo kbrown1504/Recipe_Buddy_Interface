@@ -3,6 +3,7 @@ import { PhotoService } from '../services/photo.service';
 import { recipeService } from '../services/recipe.service';
 import { NavController } from '@ionic/angular';
 import { Recipe } from 'src/models/recipe';
+import { NgZone } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,8 @@ export class HomePage {
   
   constructor(private photoService: PhotoService, 
     private recipeService: recipeService,
-    private navContoller: NavController
+    private navContoller: NavController,
+    private zone: NgZone,
     ) {}
   sendRecipe(recipe: Recipe) {
     this.recipeService.setRecipe(recipe);
@@ -33,6 +35,8 @@ export class HomePage {
   }
 
   getRecipes() {
+    this.zone.run(() => {
+      this.recipeList = []
     this.recipeList.push({name: "Spaghetti", 
     url: "https://lilluna.com/wp-content/uploads/2018/05/easy-spaghetti-resize-2.jpg", 
     ingredients: ["Spaghetti noodles", "Pasta Sauce"],
@@ -77,6 +81,7 @@ export class HomePage {
       "Enjoy!"
     ]
   });
+    })
   }
 
   
