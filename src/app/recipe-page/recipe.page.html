@@ -1,0 +1,30 @@
+<ion-content class="page-content">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Blank</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <div class="content">
+        <div id="containter">
+            <div class="welcome-text">
+                <h1>Recipe for {{recipe.name}}</h1>
+            </div>
+            <div class="recipe">
+                <img src={{recipe.url}}>
+                Ingredients: 
+                <ion-list *ngFor="let ingredient of recipe.ingredients; let i = index;">
+                    <ion-row>
+                    </ion-row>
+                    {{i + 1}}. {{ingredient}}
+                </ion-list>
+                <br>
+                Steps:
+                <ion-list *ngFor="let step of recipe.steps; let i = index;">
+                    <ion-row>
+                    </ion-row>
+                    {{i + 1}}. {{step}}
+                </ion-list>
+            </div>
+        </div>
+    </div>

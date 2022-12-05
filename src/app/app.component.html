@@ -1,9 +1,15 @@
 <ion-app>
   <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title>
-        Recipe Buddy
-      </ion-title>
+      <ion-row>
+        <ion-title>
+          Recipe Buddy
+        </ion-title>
+        <ion-button (click)="goHome()" class="round-button" shape="round">
+          <ion-icon name="home" class="icon"></ion-icon>
+        </ion-button>
+        </ion-row>
+      
     </ion-toolbar>
   </ion-header>
   <ion-router-outlet></ion-router-outlet>
